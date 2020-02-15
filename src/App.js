@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Header } from "./components/header";
 import Body, { Body2, Body3 } from "./components/body";
+import { Counter } from "./components/counter";
 
 // const Body = () => {
 //   return (
@@ -34,6 +35,7 @@ class App extends Component {
           // myFunction={(a, b) => a + b}
           myFunction={this.add}
         />
+        <Counter />
         <Body
           text="I am Alien"
           text2="I am alien tooooooo"
