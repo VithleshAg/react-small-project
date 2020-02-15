@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-
-const Body = props => (
-  <div>
-    <p className="App-intro">{props.text}</p>
-    <p className="App-intro">{props.text2}</p>
-    <p className="App-intro">{props.myFunction(567, 78)}</p>
-  </div>
-);
+import { Header } from "./components/header";
+import Body, { Body2, Body3 } from "./components/body";
 
 // const Body = () => {
 //   return (
@@ -25,23 +18,6 @@ const Body = props => (
 //     </p>
 //   );
 // }
-
-class Header extends Component {
-  render() {
-    return (
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">{this.props.title}</h1>
-        <div>{this.props.num}</div>
-        <div>{this.props.myArr[2]}</div>
-        <div>{this.props.myObj.a}</div>
-        <div>{this.props.myObj.b}</div>
-        <div>{JSON.stringify(this.props.myObj)}</div>
-        <div>{this.props.myFunction(100, 1299)}</div>
-      </header>
-    );
-  }
-}
 
 class App extends Component {
   add = (a, b) => {
@@ -64,6 +40,16 @@ class App extends Component {
           myFunction={this.add}
         />
         <Body
+          text="I am Alien"
+          text2="I am alien tooooooo"
+          myFunction={this.add}
+        />
+        <Body2
+          text="I am Alien"
+          text2="I am alien tooooooo"
+          myFunction={this.add}
+        />
+        <Body3
           text="I am Alien"
           text2="I am alien tooooooo"
           myFunction={this.add}
