@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Header } from "./components/header";
-import Body, { Body2, Body3 } from "./components/body";
-import { Counter } from "./components/counter";
+// import { Header } from "./components/header";
+// import Body, { Body2, Body3 } from "./components/body";
+// import { Counter } from "./components/counter";
+import { ImageSlider } from "./components/imageSlider";
 
 // const Body = () => {
 //   return (
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header
+        {/* <Header
           title="heyyyy"
           num={56}
           myArr={[1, 2, 3]}
@@ -55,7 +56,8 @@ class App extends Component {
           text="I am Alien"
           text2="I am alien tooooooo"
           myFunction={this.add}
-        />
+        /> */}
+        <ImageSlider />
       </div>
     );
   }
