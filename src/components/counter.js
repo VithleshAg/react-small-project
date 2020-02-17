@@ -7,6 +7,14 @@ export class Counter extends React.Component {
 
   //   state function only works in class not for function
 
+  componentWillUnmount = () => {
+    console.log("unmounting.....");
+  };
+
+  componentDidMount = () => {
+    console.log("mounting...");
+  };
+
   increment = () => {
     this.setState({
       count: this.state.count + 1

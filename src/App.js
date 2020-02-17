@@ -1,55 +1,28 @@
 import React, { Component } from "react";
 import "./App.css";
-import { ImageSlider } from "./components/imageSlider";
 import { Counter } from "./components/counter";
-import { Header } from "./components/header";
 
 class App extends Component {
   state = {
-    visible: true,
-    WhichComponentToShow: "ImageSlider"
+    visible: true
   };
+
   render() {
-    if (this.state.WhichComponentToShow === "ImageSlider") {
-      return (
-        <div>
-          <ImageSlider />
-          <button
-            onClick={() => {
-              this.setState({ WhichComponentToShow: "Counter" });
-            }}
-          >
-            Show Counter
-          </button>
-        </div>
-      );
-    } else if (this.state.WhichComponentToShow === "Counter") {
-      return (
-        <div>
+    return (
+      <div className="App">
+        {/* <div style={this.state.visible ? {} : { display: "none" }}> */}
+        <div className={this.state.visible ? "visible" : "hidden"}>
           <Counter />
-          <button
-            onClick={() => {
-              this.setState({ WhichComponentToShow: "Header" });
-            }}
-          >
-            Show Header
-          </button>
         </div>
-      );
-    } else if (this.state.WhichComponentToShow === "Header") {
-      return (
-        <div>
-          <Header />
-          <button
-            onClick={() => {
-              this.setState({ WhichComponentToShow: "ImageSlider" });
-            }}
-          >
-            Show Image Slider
-          </button>
-        </div>
-      );
-    } else return null;
+        <button
+          onClick={() => {
+            this.setState({ visible: !this.state.visible });
+          }}
+        >
+          toggle counter
+        </button>
+      </div>
+    );
   }
 }
 
