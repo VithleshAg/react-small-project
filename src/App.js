@@ -1,65 +1,55 @@
 import React, { Component } from "react";
 import "./App.css";
-// import { Header } from "./components/header";
-// import Body, { Body2, Body3 } from "./components/body";
-// import { Counter } from "./components/counter";
 import { ImageSlider } from "./components/imageSlider";
-
-// const Body = () => {
-//   return (
-//     <p className="App-intro">
-//       To get started,edit <code>src/App.js</code> and save to reload
-//     </p>
-//   );
-// };
-
-// function Body() {
-//   return (
-//     <p className="App-intro">
-//       To get started,edit <code>src/App.js</code> and save to reload
-//     </p>
-//   );
-// }
+import { Counter } from "./components/counter";
+import { Header } from "./components/header";
 
 class App extends Component {
-  add = (a, b) => {
-    return a + b;
+  state = {
+    visible: true,
+    WhichComponentToShow: "ImageSlider"
   };
   render() {
-    return (
-      <div className="App">
-        {/* <Header
-          title="heyyyy"
-          num={56}
-          myArr={[1, 2, 3]}
-          myObj={{ a: 1, b: 10 }}
-          // myFunction={(a, b) => a + b}
-          myFunction={this.add}
-        />
-        <Counter />
-        <Body
-          text="I am Alien"
-          text2="I am alien tooooooo"
-          myFunction={this.add}
-        />
-        <Body
-          text="I am Alien"
-          text2="I am alien tooooooo"
-          myFunction={this.add}
-        />
-        <Body2
-          text="I am Alien"
-          text2="I am alien tooooooo"
-          myFunction={this.add}
-        />
-        <Body3
-          text="I am Alien"
-          text2="I am alien tooooooo"
-          myFunction={this.add}
-        /> */}
-        <ImageSlider />
-      </div>
-    );
+    if (this.state.WhichComponentToShow === "ImageSlider") {
+      return (
+        <div>
+          <ImageSlider />
+          <button
+            onClick={() => {
+              this.setState({ WhichComponentToShow: "Counter" });
+            }}
+          >
+            Show Counter
+          </button>
+        </div>
+      );
+    } else if (this.state.WhichComponentToShow === "Counter") {
+      return (
+        <div>
+          <Counter />
+          <button
+            onClick={() => {
+              this.setState({ WhichComponentToShow: "Header" });
+            }}
+          >
+            Show Header
+          </button>
+        </div>
+      );
+    } else if (this.state.WhichComponentToShow === "Header") {
+      return (
+        <div>
+          <Header />
+          <button
+            onClick={() => {
+              this.setState({ WhichComponentToShow: "ImageSlider" });
+            }}
+          >
+            Show Image Slider
+          </button>
+        </div>
+      );
+    } else return null;
   }
 }
 
