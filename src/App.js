@@ -3,6 +3,7 @@ import "./App.css";
 import { Counter } from "./components/counter";
 import ValidationForm from "./components/validationForm";
 import FetchRandomUser from "./components/fetchRandomUser";
+import TodoList from "./components/TodoList";
 
 class App extends Component {
   state = {
@@ -24,16 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Counter
-          count={this.state.count}
-          increment={this.increment}
-          decrement={this.decrement}
-        />
-        <Counter
-          count={this.state.count}
-          increment={this.increment}
-          decrement={this.decrement}
-        />
+        <TodoList />
       </div>
     );
   }
